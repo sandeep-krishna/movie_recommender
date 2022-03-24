@@ -5,6 +5,10 @@ import recommendation
 app = Flask(__name__)
 CORS(app) 
         
+@app.route('/')  
+def home():  
+    return "Hello";
+
 @app.route('/movie', methods=['GET'])
 def recommend_movies():
         res = recommendation.results(request.args.get('title'))
